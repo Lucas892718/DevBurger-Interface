@@ -6,7 +6,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { ToastContainer } from 'react-toastify';
-import GlobalStyles from './styles/GlobalStyles.js';
+import GlobalStyles from './styles/globalStyles.js';
 import AppProvider from './hooks';
 import { Elements } from '@stripe/react-stripe-js';
 import stripePromise from './config/stripeConfig';
