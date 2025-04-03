@@ -6,7 +6,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import { ToastContainer } from 'react-toastify';
-import GlobalStyles from './styles/globalStyles.js';
+import GlobalStyles from './styles/globalstyles.js';
 import AppProvider from './hooks';
 import { Elements } from '@stripe/react-stripe-js';
 import stripePromise from './config/stripeConfig';
@@ -15,13 +15,13 @@ import { standardTheme } from './styles/themes/standardThemes.js';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={standardTheme}>
+      <GlobalStyles />
       <AppProvider>
         <Elements stripe={stripePromise}>
           <BrowserRouter>
             <Router />
           </BrowserRouter>
         </Elements>
-        <GlobalStyles />
         <ToastContainer autoClose={3000} theme="dark" />
       </AppProvider>
     </ThemeProvider>
