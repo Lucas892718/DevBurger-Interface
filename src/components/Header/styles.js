@@ -43,6 +43,7 @@ export const HeaderLink = styled(Link)`
   margin: 0 15px;
   font-weight: 500;
   transition: color 300ms ease-in;
+  color: #fff;
   &:hover {
     color: ${(props) => props.theme.purple};
   }
