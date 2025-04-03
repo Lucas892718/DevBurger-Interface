@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { api } from '../../services/api';
+import { api } from '../../services/api.js';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/UserContext';
 
@@ -18,7 +18,7 @@ import {
   Link,
   RightContainer,
   Title
-} from './styles';
+} from './styles.js';
 
 export function Login() {
   const navigate = useNavigate();

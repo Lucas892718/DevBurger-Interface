@@ -3,13 +3,13 @@ import { useState } from 'react';
 import {
   PaymentElement,
   useStripe,
-  useElements,
+  useElements
 } from '@stripe/react-stripe-js';
 import { useLocation } from 'react-router-dom';
 import '../styles.css';
 import { toast } from 'react-toastify';
 import { useCart } from '../../../hooks/CartContext';
-import { api } from '../../../services/api';
+import { api } from '../../../services/api.js';
 import { useNavigate } from 'react-router-dom';
 
 export function CheckoutForm() {
@@ -20,7 +20,7 @@ export function CheckoutForm() {
   const elements = useElements();
 
   const {
-    state: { dpmCheckerLink },
+    state: { dpmCheckerLink }
   } = useLocation();
 
   const [message, setMessage] = useState(null);
@@ -38,7 +38,7 @@ export function CheckoutForm() {
 
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
-      redirect: 'if_required',
+      redirect: 'if_required'
     });
 
     if (error) {
@@ -50,7 +50,7 @@ export function CheckoutForm() {
           return {
             id: product.id,
             quantity: product.quantity,
-            price: product.price,
+            price: product.price
           };
         });
 
@@ -58,8 +58,8 @@ export function CheckoutForm() {
           '/orders',
           { products },
           {
-            validateStatus: () => true,
-          },
+            validateStatus: () => true
+          }
         );
 
         if (status === 200 || status === 201) {
@@ -67,7 +67,7 @@ export function CheckoutForm() {
 
           setTimeout(() => {
             Navigate(
-              `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
+              `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`
             );
             clearCart();
           }, 2000);
@@ -83,14 +83,14 @@ export function CheckoutForm() {
       }
     } else {
       Navigate(
-        `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
+        `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`
       );
     }
     setIsLoading(false);
   };
 
   const paymentElementOptions = {
-    layout: 'accordion',
+    layout: 'accordion'
   };
 
   return (

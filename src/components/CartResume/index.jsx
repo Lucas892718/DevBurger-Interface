@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../../hooks/CartContext';
-import { formatPrice } from '../../utils/currenyFormat';
+import { formatPrice } from '../../utils/currenyFormat.js';
 import { toast } from 'react-toastify';
-import { api } from '../../services/api';
-import { Container } from './styles';
+import { api } from '../../services/api.js';
+import { Container } from './styles.js';
 import { Button } from '../Button';
 import { useNavigate } from 'react-router-dom';
 export function CartResume() {
@@ -27,14 +27,14 @@ export function CartResume() {
       return {
         id: product.id,
         quantity: product.quantity,
-        price: product.price,
+        price: product.price
       };
     });
 
     try {
       const { data } = await api.post('/create-payment-intent', { products });
       navigate(`/checkout`, {
-        state: data,
+        state: data
       });
     } catch (err) {
       toast.error('Ocorreu um erro, tente novamente', {
@@ -45,7 +45,7 @@ export function CartResume() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: 'dark',
+        theme: 'dark'
       });
     }
   };

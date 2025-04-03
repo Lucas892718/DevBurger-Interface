@@ -12,9 +12,9 @@ import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { formatDate } from '../../../utils/formatDate';
-import { ProductImg, SelectStatus } from './styles';
-import { orderStatusOptions } from './orderStatus';
-import { api } from '../../../services/api';
+import { ProductImg, SelectStatus } from './styles.js';
+import { orderStatusOptions } from './orderStatus.js';
+import { api } from '../../../services/api.js';
 import { useState } from 'react';
 
 export function Row({ orders, setOrders, row }) {

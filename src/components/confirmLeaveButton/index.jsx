@@ -3,7 +3,7 @@ import { useUser } from '../../hooks/UserContext';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { useNavigate } from 'react-router-dom';
-import { Logout } from './styles';
+import { Logout } from './styles.js';
 
 export default function LeaveButton() {
   const { logout } = useUser();
@@ -19,13 +19,13 @@ export default function LeaveButton() {
           onClick: () => {
             logout();
             navigate('/login');
-          },
+          }
         },
         {
           label: 'Não, quero ficar',
-          close: true,
-        },
-      ],
+          close: true
+        }
+      ]
     });
   };
   return (

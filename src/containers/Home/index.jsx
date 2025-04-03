@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner, Container, Content } from './styles';
+import { Banner, Container, Content } from './styles.js';
 import { CategoriesCarousel, OffersCarousel } from '../../components';
 import { useUser } from '../../hooks/UserContext';
 import { useNavigate } from 'react-router-dom';

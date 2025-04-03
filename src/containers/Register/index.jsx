@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { api } from '../../services/api';
+import { api } from '../../services/api.js';
 import { useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
@@ -15,8 +15,8 @@ import {
   LeftContainer,
   Link,
   RightContainer,
-  Title,
-} from './styles';
+  Title
+} from './styles.js';
 
 export function Register() {
   const navigate = useNavigate();
@@ -35,16 +35,16 @@ export function Register() {
       confirmPassword: yup
         .string()
         .oneOf([yup.ref('password')], 'As senhas devem ser iguais')
-        .required('Confirme sua senha'),
+        .required('Confirme sua senha')
     })
     .required();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema)
   });
 
   const onSubmit = async (data) => {
@@ -54,11 +54,11 @@ export function Register() {
         {
           name: data.name,
           email: data.email,
-          password: data.password,
+          password: data.password
         },
         {
-          validateStatus: () => true,
-        },
+          validateStatus: () => true
+        }
       );
 
       if (status === 200 || status === 201) {

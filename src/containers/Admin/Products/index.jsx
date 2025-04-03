@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { api } from '../../../services/api';
-import { Container, ProductImage, EditButton } from './styles';
+import { api } from '../../../services/api.js';
+import { Container, ProductImage, EditButton } from './styles.js';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';

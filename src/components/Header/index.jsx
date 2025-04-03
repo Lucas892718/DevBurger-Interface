@@ -11,8 +11,8 @@ import {
   LinkContainer,
   Navigation,
   Options,
-  Profile,
-} from './styles';
+  Profile
+} from './styles.js';
 
 export function Header() {
   const navigate = useNavigate();

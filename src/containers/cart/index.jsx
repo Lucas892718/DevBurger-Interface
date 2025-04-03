@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../assets/LogoDevBurger.png';
 
-import { Banner, Container, Content, Title } from './styles';
+import { Banner, Container, Content, Title } from './styles.js';
 import { CartItems, CartResume } from '../../components';
 export function Cart() {
   return (

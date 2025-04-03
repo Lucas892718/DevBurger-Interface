@@ -6,7 +6,7 @@ import {
   ContainerItemsFiltred,
   CardProduct,
   ProductNotFound
-} from './styles';
+} from './styles.js';
 
 export const SearchProduct = ({ products, setFilteredProducts }) => {
   // 1. Verificação de props

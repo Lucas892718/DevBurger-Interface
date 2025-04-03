@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { api } from '../../../services/api';
+import { api } from '../../../services/api.js';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { Image } from '@phosphor-icons/react';
@@ -18,7 +18,7 @@ import {
   SubmitButton,
   ErrorMessage,
   OfferCheckBox
-} from './styles';
+} from './styles.js';
 import { toast } from 'react-toastify';
 
 const schema = yup.object({

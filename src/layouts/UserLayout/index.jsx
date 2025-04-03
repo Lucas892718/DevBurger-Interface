@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header, Footer } from '../../components';
-import { Wrapper } from './styles';
+import { Wrapper } from './styles.js';
 
 export function UserLayout() {
   return (

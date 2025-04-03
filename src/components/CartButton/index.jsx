@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContainerButton } from './styles';
+import { ContainerButton } from './styles.js';
 import CartBtn from '../../assets/Cart.svg';
 
 export function CartButton({ ...props }) {

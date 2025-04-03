@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api } from '../../services/api.js';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { CategoryButton, CategoryItem, Container, Title } from './styles';
+import { CategoryButton, CategoryItem, Container, Title } from './styles.js';
 import { useNavigate } from 'react-router-dom';
 
 export function CategoriesCarousel() {

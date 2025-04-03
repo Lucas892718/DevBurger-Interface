@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from './styles';
+import { Container } from './styles.js';
 export function Footer() {
   return (
     <Container>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { api } from '../../services/api';
-import { formatPrice } from '../../utils/currenyFormat';
+import { api } from '../../services/api.js';
+import { formatPrice } from '../../utils/currenyFormat.js';
 
 import { CardProduct } from '../../components/CardProduct';
 import {
@@ -10,8 +10,8 @@ import {
   CategoryButton,
   CategoryMenu,
   Container,
-  ProductsContainer,
-} from './styles';
+  ProductsContainer
+} from './styles.js';
 
 export function Menu() {
   const [categories, setCategories] = useState([]);
@@ -51,7 +51,7 @@ export function Menu() {
 
       const newProducts = data.map((product) => ({
         currencyValue: formatPrice(product.price),
-        ...product,
+        ...product
       }));
 
       setProducts(newProducts);
@@ -66,7 +66,7 @@ export function Menu() {
       setFilteredProducts(products);
     } else {
       const newFilteredProducts = products.filter(
-        (product) => product.category_id === activeCategory,
+        (product) => product.category_id === activeCategory
       );
       setFilteredProducts(newFilteredProducts);
     }
@@ -93,11 +93,11 @@ export function Menu() {
               navigate(
                 {
                   pathname: '/cardapio',
-                  search: `?categoria=${category.id}`,
+                  search: `?categoria=${category.id}`
                 },
                 {
-                  replace: true,
-                },
+                  replace: true
+                }
               );
               setActiveCategory(category.id);
             }}

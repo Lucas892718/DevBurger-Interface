@@ -7,10 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Row } from './row';
-import { api } from '../../../services/api';
+import { api } from '../../../services/api.js';
 import { useEffect, useState } from 'react';
-import { orderStatusOptions } from './orderStatus';
-import { Filter, FilteredOptions } from './styles';
+import { orderStatusOptions } from './orderStatus.js';
+import { Filter, FilteredOptions } from './styles.js';
 
 export function Orders() {
   const [orders, setOrders] = useState([]); /* BackUp */

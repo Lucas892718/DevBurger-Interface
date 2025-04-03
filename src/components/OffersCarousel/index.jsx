@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api } from '../../services/api.js';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-import { Container, Title } from './styles';
+import { Container, Title } from './styles.js';
 import { CardProduct } from '../CardProduct';
 
-import { formatPrice } from '../../utils/currenyFormat';
+import { formatPrice } from '../../utils/currenyFormat.js';
 
 export function OffersCarousel() {
   const [offers, setOffers] = useState([]);
@@ -20,7 +20,7 @@ export function OffersCarousel() {
         .filter((product) => product.offer)
         .map((product) => ({
           currencyValue: formatPrice(product.price),
-          ...product,
+          ...product
         }));
 
       setOffers(onlyOffers);
@@ -31,20 +31,20 @@ export function OffersCarousel() {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 4,
+      items: 4
     },
     desktop: {
       breakpoint: { max: 3000, min: 1280 },
-      items: 4,
+      items: 4
     },
     tablet: {
       breakpoint: { max: 1280, min: 690 },
-      items: 3,
+      items: 3
     },
     mobile: {
       breakpoint: { max: 690, min: 0 },
-      items: 2,
-    },
+      items: 2
+    }
   };
 
   return (

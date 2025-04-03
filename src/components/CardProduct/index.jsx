@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { CardImage, Container } from './styles';
+import { CardImage, Container } from './styles.js';
 import { CartButton } from '../CartButton';
 import { useCart } from '../../hooks/CartContext';
 
@@ -19,5 +19,5 @@ export function CardProduct({ product }) {
 }
 
 CardProduct.propTypes = {
-  product: PropTypes.object,
+  product: PropTypes.object
 };

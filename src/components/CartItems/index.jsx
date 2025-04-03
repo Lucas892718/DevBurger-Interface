@@ -1,8 +1,8 @@
 import React from 'react';
 import { useCart } from '../../hooks/CartContext';
-import { Table } from '../index';
-import { formatPrice } from '../../utils/currenyFormat';
-import { ButtonGroup, EmptyMessage, ProductImage, TrashSvg } from './styles';
+import { Table } from '../index.js';
+import { formatPrice } from '../../utils/currenyFormat.js';
+import { ButtonGroup, EmptyMessage, ProductImage, TrashSvg } from './styles.js';
 import trashIcon from '../../assets/trash.svg';
 export function CartItems() {
   const {
