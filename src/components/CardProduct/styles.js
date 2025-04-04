@@ -48,5 +48,4 @@ export const CardImage = styled.img`
   height: 100px;
   position: absolute;
   top: -50px;
-  border-radius: 50px 20px 20px 0;
 `;
