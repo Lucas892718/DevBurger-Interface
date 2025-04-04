@@ -115,8 +115,8 @@ export function CheckoutForm() {
       </form>
       <div id="dpm-annotation">
         <p>
-          Payment methods are dynamically displayed based on customer location,
-          order amount, and currency.&nbsp;
+          Pagamentos realizados aqui são ficticios e apenas para fins educativos
+          .&nbsp;
           <a
             href={dpmCheckerLink}
             target="_blank"
