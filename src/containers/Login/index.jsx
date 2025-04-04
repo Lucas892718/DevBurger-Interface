@@ -99,7 +99,10 @@ export function Login() {
         <p>
           Não possui conta? <Link to="/cadastro">Clique aqui.</Link>
         </p>
-        <p>Estamos na tela de login</p>
+        <p>
+          Entre como Administrador: <span>AdminProject@gmail.com </span>- Senha:{' '}
+          <span>DevClub2025</span>
+        </p>
       </RightContainer>
     </Container>
   );

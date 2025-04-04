@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { EditProduct, NewProducts } from '../containers/Admin';
 import { UserLayout, AdminLayout } from '../layouts';
+import { PrivateRoute } from './protectedRoutes';
 import {
   Login,
   Cart,
@@ -17,7 +18,14 @@ import {
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<UserLayout />}>
+      <Route
+        path="/"
+        element={
+          <PrivateRoute>
+            <UserLayout />
+          </PrivateRoute>
+        }
+      >
         <Route path="/" element={<Home />} />
         <Route path="/cardapio" element={<Menu />} />
         <Route path="/checkout" element={<Checkout />} />
@@ -25,7 +33,14 @@ export function Router() {
         <Route path="/complete" element={<CompletePayment />} />
       </Route>
 
-      <Route path="/admin" element={<AdminLayout />}>
+      <Route
+        path="/admin"
+        element={
+          <PrivateRoute>
+            <AdminLayout />
+          </PrivateRoute>
+        }
+      >
         <Route path="/admin/pedidos" element={<Orders />} />
         <Route path="/admin/novos-produtos" element={<NewProducts />} />
         <Route path="/admin/editar-produtos" element={<EditProduct />} />
