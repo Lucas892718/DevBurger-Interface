@@ -1,13 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header, Footer } from '../../components';
-import { Wrapper } from './styles.js';
+import { Wrapper, MainContent } from './styles.js';
 
 export function UserLayout() {
   return (
     <Wrapper>
       <Header />
-      <Outlet />
+      <MainContent>
+        <Outlet />
+      </MainContent>
       <Footer />
     </Wrapper>
   );
