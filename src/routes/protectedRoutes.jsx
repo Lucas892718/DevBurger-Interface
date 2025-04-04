@@ -6,8 +6,8 @@ export function PrivateRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-
+    const storedUser = localStorage.getItem('devburger:UserInfo');
+    const token = storedUser ? JSON.parse(storedUser) : null;
     if (token) {
       setIsAuthenticated(true);
     } else {
