@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 export function CartButton({ onClick, ...props }) {
   const handleClick = (e) => {
-    if (onClick) onClick(e); // chama a função que adiciona ao carrinho
+    if (onClick) onClick(e);
     toast.success('Produto adicionado ao carrinho');
   };
   return (
