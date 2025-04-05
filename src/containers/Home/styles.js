@@ -25,7 +25,8 @@ export const Container = styled.section`
   background:
     linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
     url(${loginBackGround});
-  height: 557px;
+  min-height: 557px;
+  flex: 1;
 `;
 export const Content = styled.div`
   padding-bottom: 70px;
