@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 58px;
-  width: 100vw;
+  width: 100%;
   top: 250px;
-  background-color: purple;
+  background-color: ${(props) => props.theme.purple};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@ export const Container = styled.div`
   p {
     font-weight: 500;
     font-size: 16px;
-    color: #fff;
+    color: #${(props) => props.theme.white};
   }
 
   span {
@@ -20,3 +20,5 @@ export const Container = styled.div`
     font-weight: 800;
   }
 `;
+
+export const CopyrightContainer = styled.div``;
