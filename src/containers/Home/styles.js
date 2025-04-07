@@ -25,6 +25,6 @@ export const Container = styled.section`
   background:
     linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
     url(${loginBackGround});
-  min-height: 100vh;
+  min-height: 70vh;
 `;
 export const Content = styled.div``;
