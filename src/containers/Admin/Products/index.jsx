@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { api } from '../../../services/api.js';
-import { Container, ProductImage, EditButton } from './styles.js';
+import { api } from '../../../services/api';
+import { Container, ProductImage, EditButton } from './styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -13,6 +13,8 @@ import { formatPrice } from '../../../utils/currenyFormat';
 import { CheckBox } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { SearchProduct } from '../../../components/SearchProduct';
+import { useMediaQuery } from 'react-responsive';
+import { ProductsMobileLayout } from './MobileTableProducts';
 
 export function Products() {
   const [products, setProducts] = useState([]);
@@ -25,9 +27,7 @@ export function Products() {
       const { data } = await api.get('/products');
 
       setProducts(data);
-      setFilteredProducts(
-        data
-      ); /* Inicializa filteredProducts com todos os produtos */
+      setFilteredProducts(data);
     }
     loadProducts();
   }, []);
@@ -42,6 +42,20 @@ export function Products() {
 
   function editProduct(product) {
     navigate('/admin/editar-produtos', { state: { product } });
+  }
+
+  /* Layout Mobile */
+  const isMobileDevice = useMediaQuery({ minWidth: 200, maxWidth: 700 });
+
+  useEffect(() => {
+    const table = document.getElementById('rootTable');
+
+    if (table) {
+      table.style.display = isMobileDevice ? 'none' : 'table';
+    }
+  }, [isMobileDevice]);
+  if (isMobileDevice) {
+    return <ProductsMobileLayout />;
   }
 
   return (

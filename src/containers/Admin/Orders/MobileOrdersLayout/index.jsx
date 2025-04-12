@@ -7,20 +7,16 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Row } from './row';
-import { api } from '../../../services/api';
+import { api } from '../../../../services/api.js';
 import { useEffect, useState } from 'react';
-import { orderStatusOptions } from './orderStatus';
-import { Filter, FilteredOptions } from './styles';
-
-import { useMediaQuery } from 'react-responsive';
-import { OrdersMobile } from './MobileOrdersLayout';
-
-export function Orders() {
+import { orderStatusOptions } from './orderStatus.js';
+import { Filter, FilteredOptions, Container } from './styles';
+export function OrdersMobile() {
   const [orders, setOrders] = useState([]); /* BackUp */
   const [filteredOrders, setFilteredOrders] = useState([]);
-  const [rows, setRows] = useState([]);
-
   const [activeStatus, setActiveStatus] = useState([0]);
+
+  const [rows, setRows] = useState([]);
 
   useEffect(() => {
     async function LoadOrders() {
@@ -83,19 +79,8 @@ export function Orders() {
     handleStatus(orderStatusOptions[0]);
   }, []);
 
-  const isMobileDevice = useMediaQuery({ minWidth: 200, maxWidth: 1000 });
-  useEffect(() => {
-    const table = document.getElementById('tableData');
-
-    if (table) {
-      table.style.display = isMobileDevice ? 'none' : 'table';
-    }
-  }, [isMobileDevice]);
-  if (isMobileDevice) {
-    return <OrdersMobile />;
-  }
   return (
-    <>
+    <Container>
       <Filter>
         {orderStatusOptions.map((status) => (
           <FilteredOptions
@@ -109,15 +94,14 @@ export function Orders() {
           </FilteredOptions>
         ))}
       </Filter>
+
       <TableContainer component={Paper}>
-        <Table aria-label="collapsible table" id="tableData">
+        <Table aria-label="collapsible table">
           <TableHead>
             <TableRow>
               <TableCell />
-              <TableCell>Pedidos</TableCell>
               <TableCell>Cliente</TableCell>
               <TableCell>Data do pedido</TableCell>
-              <TableCell>Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -132,6 +116,6 @@ export function Orders() {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </Container>
   );
 }

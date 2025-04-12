@@ -12,6 +12,10 @@ export const Container = styled.div`
   * {
     font-weight: 500;
     color: ${(props) => props.theme.secondBlack};
+    @media (max-width: 430px) {
+      font-size: 20px;
+      font-weight: bold;
+    }
   }
   .container-top {
     display: grid;
