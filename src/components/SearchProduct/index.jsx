@@ -9,23 +9,20 @@ import {
 } from './styles.js';
 
 export const SearchProduct = ({ products, setFilteredProducts }) => {
-  // 1. Verificação de props
   if (!products || !setFilteredProducts) {
     console.error(
       'Os props "products" e "setFilteredProducts" devem ser fornecidos.'
     );
   }
 
-  // 2. Estado
-  const [searchText, setSearchText] = useState(''); // Texto de pesquisa
+  const [searchText, setSearchText] = useState('');
 
-  // 3. Função de busca
   const handleSearch = (nameValue) => {
     const searchValue = nameValue.toLowerCase();
-    setSearchText(searchValue); // Atualiza o texto da pesquisa
+    setSearchText(searchValue);
 
     if (searchValue === '') {
-      setFilteredProducts(products); // Exibe todos os produtos se o input estiver vazio
+      setFilteredProducts(products);
     } else {
       const filteredItems = products.filter((product) =>
         product.name?.toLowerCase().includes(searchValue)
@@ -34,12 +31,11 @@ export const SearchProduct = ({ products, setFilteredProducts }) => {
     }
   };
 
-  // 4. JSX/Renderização
   return (
     <Container>
       <InputSearch
-        placeholder="Pesquisar o nome do produto"
-        value={searchText} // Valor que o usuário digita
+        placeholder="Pesquisar algum produto?"
+        value={searchText}
         onChange={(product) => handleSearch(product.target.value)}
       />
 
@@ -49,7 +45,7 @@ export const SearchProduct = ({ products, setFilteredProducts }) => {
             <CardProduct key={product.id} product={product} />
           ))
         ) : (
-          <ProductNotFound>Produto nao encontrado</ProductNotFound>
+          <ProductNotFound>Produto não encontrado</ProductNotFound>
         )}
       </ContainerItemsFiltred>
     </Container>
