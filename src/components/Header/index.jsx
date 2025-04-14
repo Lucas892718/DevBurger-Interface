@@ -12,7 +12,7 @@ import {
   Navigation,
   Options,
   Profile
-} from './styles.js';
+} from './styles';
 
 export function Header() {
   const { pathname } = useResolvedPath();
