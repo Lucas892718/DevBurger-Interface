@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 export const Container = styled.div`
-  width: 100%;
   height: 80px;
   background-color: rgb(31, 31, 31);
   @media (max-width: 768px) {
-    height: 160px;
+    height: 165px;
+    padding: 20px;
   }
 `;
 
@@ -22,14 +21,11 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5px;
   }
 `;
-
 export const Navigation = styled.nav`
   display: flex;
   align-items: center;
-  height: 72px;
   justify-content: center;
 
   div {
@@ -37,7 +33,7 @@ export const Navigation = styled.nav`
     align-items: center;
     gap: 20px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
       margin-bottom: 5px;
     }
   }
@@ -56,7 +52,6 @@ export const HeaderLink = styled(Link)`
   margin: 0 5px;
   font-weight: 500;
   transition: color 300ms ease-in;
-  color: #fff;
   &:hover {
     color: ${(props) => props.theme.purple};
   }
@@ -69,11 +64,9 @@ export const HeaderLink = styled(Link)`
 export const Options = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 48px;
-
-  @media (max-width: 768px) {
-    gap: 20px;
+  @media (max-width: 700px) {
+    gap: 25px;
     margin-top: 15px;
   }
 `;
@@ -89,6 +82,7 @@ export const Profile = styled.div`
     font-size: 15px;
     color: #fff;
     font-weight: 300;
+
     span {
       color: ${(props) => props.theme.gren};
       font-size: 20px;
@@ -105,7 +99,8 @@ export const LinkContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  @media (max-width: 768px) {
+
+  @media (max-width: 700px) {
     gap: 0;
   }
 `;
