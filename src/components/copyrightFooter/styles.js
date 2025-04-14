@@ -19,6 +19,18 @@ export const Container = styled.div`
     color: rgb(0, 255, 64);
     font-weight: 800;
   }
+
+  @media (max-width: 521px) {
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    span {
+      margin-left: 5px;
+    }
+  }
 `;
 
 export const CopyrightContainer = styled.div``;

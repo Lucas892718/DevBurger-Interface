@@ -8,6 +8,12 @@ export const Container = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
+
+  @media (max-width: 600px) {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
 
 export const LeftContainer = styled.div`
@@ -16,14 +22,26 @@ export const LeftContainer = styled.div`
   background-position: center;
 
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
   img {
-    height: 85%;
+    height: 50%;
+
+    @media (max-width: 600px) {
+      width: 100%;
+      max-width: 90%;
+      margin-top: 100px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    width: 100%;
   }
 `;
 
@@ -51,6 +69,10 @@ export const RightContainer = styled.div`
       text-decoration-line: underline;
       text-decoration-color: ${(props) => props.theme.white};
     }
+  }
+  @media (max-width: 600px) {
+    max-width: 100%;
+    width: 100%;
   }
 `;
 

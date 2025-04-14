@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 0 16px;
 `;
 
 export const Form = styled.form`
@@ -18,6 +19,12 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  @media (max-width: 600px) {
+    min-width: 370px;
+  }
 `;
 
 export const InputGroup = styled.div`
