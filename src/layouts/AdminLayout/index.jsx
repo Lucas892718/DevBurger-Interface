@@ -3,13 +3,9 @@ import { Outlet, Navigate } from 'react-router-dom';
 import { SideNavAdmin } from '../../components';
 import { Container } from './styles.js';
 export function AdminLayout() {
-  const userInfo = localStorage.getItem('devburger:UserInfo');
-
-  if (!userInfo) {
-    return <Navigate to="/login" />;
-  }
-
-  const { admin: isAdmin } = JSON.parse(userInfo);
+  const { admin: isAdmin } = JSON.parse(
+    localStorage.getItem('devburger:UserInfo')
+  );
 
   return isAdmin ? (
     <Container>

@@ -1,33 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useCart } from '../../hooks/CartContext';
-import { formatPrice } from '../../utils/currenyFormat.js';
 import { Table } from '../index.js';
-import { TableForMobile } from '../MobileTableCheckout/index.jsx'; // Tabela para mobile
-import { useMediaQuery } from 'react-responsive';
-import { ButtonGroup, ProductImage, TrashSvg } from './styles.js';
+import { formatPrice } from '../../utils/currenyFormat.js';
+import { ButtonGroup, EmptyMessage, ProductImage, TrashSvg } from './styles.js';
 import trashIcon from '../../assets/trash.svg';
 export function CartItems() {
-  const { cartProducts, increaseProduct, decreaseProduct, deleteProduct } =
-    useCart();
-
-  const isMobileDevice = useMediaQuery({ minWidth: 200, maxWidth: 700 });
-
-  useEffect(() => {
-    const table = document.getElementById('rootTable');
-
-    if (table) {
-      table.style.display = isMobileDevice ? 'none' : 'table';
-    }
-  }, [isMobileDevice]);
-  if (isMobileDevice) {
-    return <TableForMobile />;
-  }
+  const {
+    cartProducts,
+    increaseProduct,
+    decreaseProduct,
+    deleteProduct,
+    upDateLocalStorage
+  } = useCart();
 
   return (
-    <Table.Root id="rootTable">
+    <Table.Root>
       <Table.Header>
         <Table.Tr>
-          <Table.Th>Imagem</Table.Th>
+          <Table.Th></Table.Th>
           <Table.Th>Produtos</Table.Th>
           <Table.Th>Preço</Table.Th>
           <Table.Th>Quantidade</Table.Th>
@@ -68,17 +58,7 @@ export function CartItems() {
             </Table.Tr>
           ))
         ) : (
-          <Table.Tr>
-            <Table.Td
-              style={{
-                textAlign: 'center',
-                fontSize: '20px'
-              }}
-              colSpan="5"
-            >
-              Nenhum produto no carrinho.
-            </Table.Td>
-          </Table.Tr>
+          <EmptyMessage />
         )}
       </Table.Body>
     </Table.Root>

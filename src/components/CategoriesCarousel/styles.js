@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   .Carousel-item {
-    padding-right: 30px;
+    padding-right: 40px;
   }
   .react-multiple-carousel__arrow--left {
     left: 15px;
@@ -10,9 +10,6 @@ export const Container = styled.div`
   }
   .react-multiple-carousel__arrow--right {
     top: 10px;
-    @media (max-width: 1000px) {
-      right: 50px;
-    }
   }
   padding-left: 40px;
 `;
@@ -43,8 +40,6 @@ export const Title = styled.h2`
 
 export const CategoryItem = styled.div`
   background: url('${(props) => props.imageurl}');
-  background-size: cover;
-
   background-position: center;
   background-size: cover;
   border-radius: 20px;
@@ -54,14 +49,6 @@ export const CategoryItem = styled.div`
   padding: 20px 10px;
   width: 100%;
   height: 200px;
-  .categoryName {
-    color: ${(props) => props.theme.white};
-    font-weight: bold;
-    width: 100%;
-    @media (max-width: 600px) and (min-width: 800px) {
-      width: 80%;
-    }
-  }
 `;
 
 export const CategoryButton = styled.button`

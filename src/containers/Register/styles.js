@@ -8,11 +8,6 @@ export const Container = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
-  @media (max-width: 600px) {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
 `;
 
 export const LeftContainer = styled.div`
@@ -21,26 +16,14 @@ export const LeftContainer = styled.div`
   background-position: center;
 
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
   img {
-    height: 50%;
-
-    @media (max-width: 600px) {
-      width: 100%;
-      max-width: 90%;
-      margin-top: 120px;
-      height: auto;
-    }
-  }
-  @media (max-width: 600px) {
-    max-width: 100%;
-    width: 100%;
-    margin-top: 100px;
+    height: 85%;
   }
 `;
 
@@ -53,7 +36,6 @@ export const RightContainer = styled.div`
   height: 100%;
   width: 100%;
   max-width: 50%;
-  padding-bottom: 25px;
 
   background: url('${loginBackGround}');
   background-size: cover;
@@ -70,10 +52,6 @@ export const RightContainer = styled.div`
       text-decoration-color: ${(props) => props.theme.white};
     }
   }
-  @media (max-width: 600px) {
-    max-width: 100%;
-    width: 100%;
-  }
 `;
 
 export const Title = styled.h1`
@@ -81,13 +59,13 @@ export const Title = styled.h1`
   font-weight: 500;
   font-size: 40px;
   color: ${(props) => props.theme.purple};
+
   line-height: 40px;
+
   span {
     color: ${(props) => props.theme.purple};
+
     font-family: 'Road Rage', serif;
-  }
-  @media (max-width: 600px) {
-    margin-top: 20px;
   }
 `;
 

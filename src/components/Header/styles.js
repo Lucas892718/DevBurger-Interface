@@ -5,28 +5,17 @@ export const Container = styled.div`
   width: 100%;
   height: 80px;
   background-color: rgb(31, 31, 31);
-  @media (max-width: 768px) {
-    height: 145px;
-  }
 `;
 
 export const Content = styled.div`
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 15px;
-  }
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 `;
-
 export const Navigation = styled.nav`
   display: flex;
   align-items: center;
@@ -34,14 +23,10 @@ export const Navigation = styled.nav`
   justify-content: center;
 
   div {
+    margin-left: 56px;
     display: flex;
     align-items: center;
     gap: 20px;
-
-    @media (max-width: 768px) {
-      gap: 30px;
-      margin-bottom: 5px;
-    }
   }
 `;
 
@@ -55,7 +40,7 @@ export const HeaderLink = styled(Link)`
     $isActive ? `2px solid ${(props) => props.theme.purple}` : 'none'};
   text-decoration: none;
   font-size: 16px;
-  margin: 0 5px;
+  margin: 0 15px;
   font-weight: 500;
   transition: color 300ms ease-in;
   color: #fff;
@@ -73,11 +58,6 @@ export const Options = styled.div`
   align-items: center;
   justify-content: center;
   gap: 48px;
-
-  @media (max-width: 768px) {
-    gap: 70px;
-    margin-top: 15px;
-  }
 `;
 export const Profile = styled.div`
   display: flex;
@@ -93,12 +73,8 @@ export const Profile = styled.div`
     font-weight: 300;
     span {
       color: ${(props) => props.theme.gren};
-      font-size: 20px;
-      font-weight: 700;
 
-      @media (min-width: 200px) and (max-width: 768px) {
-        font-size: 16px;
-      }
+      font-weight: 700;
     }
   }
 `;

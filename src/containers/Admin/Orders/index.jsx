@@ -7,20 +7,17 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Row } from './row';
-import { api } from '../../../services/api';
+import { api } from '../../../services/api.js';
 import { useEffect, useState } from 'react';
-import { orderStatusOptions } from './orderStatus';
-import { Filter, FilteredOptions } from './styles';
-
-import { useMediaQuery } from 'react-responsive';
-import { OrdersMobile } from './MobileOrdersLayout';
+import { orderStatusOptions } from './orderStatus.js';
+import { Filter, FilteredOptions } from './styles.js';
 
 export function Orders() {
   const [orders, setOrders] = useState([]); /* BackUp */
   const [filteredOrders, setFilteredOrders] = useState([]);
-  const [rows, setRows] = useState([]);
-
   const [activeStatus, setActiveStatus] = useState([0]);
+
+  const [rows, setRows] = useState([]);
 
   useEffect(() => {
     async function LoadOrders() {
@@ -83,17 +80,6 @@ export function Orders() {
     handleStatus(orderStatusOptions[0]);
   }, []);
 
-  const isMobileDevice = useMediaQuery({ minWidth: 200, maxWidth: 1000 });
-  useEffect(() => {
-    const table = document.getElementById('tableData');
-
-    if (table) {
-      table.style.display = isMobileDevice ? 'none' : 'table';
-    }
-  }, [isMobileDevice]);
-  if (isMobileDevice) {
-    return <OrdersMobile />;
-  }
   return (
     <>
       <Filter>
@@ -110,7 +96,7 @@ export function Orders() {
         ))}
       </Filter>
       <TableContainer component={Paper}>
-        <Table aria-label="collapsible table" id="tableData">
+        <Table aria-label="collapsible table">
           <TableHead>
             <TableRow>
               <TableCell />

@@ -97,8 +97,7 @@ export function Login() {
         </Form>
 
         <p>
-          Não possui conta?
-          <Link to="/cadastro">Clique aqui.</Link>
+          Não possui conta? <Link to="/cadastro">Clique aqui.</Link>
         </p>
         <p>
           Entre como Administrador: <span>AdminProject@gmail.com </span>- Senha:{' '}

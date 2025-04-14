@@ -11,7 +11,7 @@ export function Cart() {
       </Banner>
 
       <Title>
-        Checkout do pedido
+        Checkout - pedido
         <hr />
       </Title>
 

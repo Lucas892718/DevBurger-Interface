@@ -36,7 +36,6 @@ export function CartResume() {
       navigate(`/checkout`, {
         state: data
       });
-      clearCart();
     } catch (err) {
       toast.error('Ocorreu um erro, tente novamente', {
         position: 'top-right',

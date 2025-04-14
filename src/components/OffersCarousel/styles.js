@@ -17,9 +17,6 @@ export const Container = styled.div`
   }
   .react-multiple-carousel__arrow--right {
     top: 10px;
-    @media (max-width: 1000px) {
-      right: 50px;
-    }
   }
 
   padding-left: 40px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { UserCircle, ShoppingCart, LineVertical } from '@phosphor-icons/react';
-import { useResolvedPath } from 'react-router-dom';
+import { useNavigate, useResolvedPath } from 'react-router-dom';
 import { useUser } from '../../hooks/UserContext';
 
 import LeaveButton from '../confirmLeaveButton';
@@ -15,6 +15,8 @@ import {
 } from './styles.js';
 
 export function Header() {
+  const navigate = useNavigate();
+
   const { pathname } = useResolvedPath();
 
   const { userInfo } = useUser();
