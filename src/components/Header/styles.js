@@ -22,7 +22,6 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
     margin-top: 15px;
   }
 `;
@@ -39,7 +38,6 @@ export const Navigation = styled.nav`
     gap: 20px;
 
     @media (max-width: 768px) {
-      gap: 30px;
       margin-bottom: 5px;
     }
   }
@@ -75,7 +73,7 @@ export const Options = styled.div`
   gap: 48px;
 
   @media (max-width: 768px) {
-    gap: 70px;
+    gap: 20px;
     margin-top: 15px;
   }
 `;
@@ -107,4 +105,7 @@ export const LinkContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  @media (max-width: 768px) {
+    gap: 0;
+  }
 `;
