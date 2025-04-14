@@ -27,4 +27,9 @@ export const Container = styled.div`
     max-width: 1280px;
     width: 100%;
   }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
 `;
